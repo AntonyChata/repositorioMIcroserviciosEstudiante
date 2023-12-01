@@ -2,9 +2,9 @@ name: Docker Image CI
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "master" ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ "master" ]
 
 jobs:
 
@@ -21,11 +21,11 @@ jobs:
       run: |
        echo "Iniciando login"
        docker login -u $DOCKER_USER -p $DOCKER_CLAVE
-       echo "Iniciando login"
+       echo "Fin login"
        
     - name: Construir Imagen
       run: |
-         docker build -t osiel11dc/estudianteperu:1.0 . 
+         docker build -t antony1212/microserviciospasaje:1.0 . 
     - name: Subir Imagen
       run: |
-         docker push osiel11dc/estudianteperu:1.0
+         docker push antony1212/microserviciospasaje:1.0
